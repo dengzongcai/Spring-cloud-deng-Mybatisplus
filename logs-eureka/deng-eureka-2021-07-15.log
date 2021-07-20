@@ -1,6 +1,0 @@
-2021-07-15 14:25:44 [main] [INFO] [org.springframework.boot.SpringApplication:679] [logStartupProfileInfo] - The following profiles are active: dev
-2021-07-15 14:25:47 [main] [INFO] [org.springframework.boot.StartupInfoLogger:59] [logStarted] - Started EurekaApplication in 3.207 seconds (JVM running for 3.729)
-2021-07-15 15:09:06 [main] [INFO] [org.springframework.boot.SpringApplication:679] [logStartupProfileInfo] - The following profiles are active: dev
-2021-07-15 15:09:08 [main] [INFO] [org.springframework.boot.StartupInfoLogger:59] [logStarted] - Started EurekaApplication in 3.219 seconds (JVM running for 3.799)
-2021-07-15 16:48:51 [main] [INFO] [org.springframework.boot.SpringApplication:679] [logStartupProfileInfo] - The following profiles are active: dev
-2021-07-15 16:48:55 [main] [INFO] [org.springframework.boot.StartupInfoLogger:59] [logStarted] - Started EurekaApplication in 4.431 seconds (JVM running for 5.034)
