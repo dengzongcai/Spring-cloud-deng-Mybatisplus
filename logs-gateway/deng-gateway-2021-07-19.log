@@ -1,8 +1,0 @@
-2021-07-19 16:56:23 [restartedMain] [INFO] [org.springframework.boot.SpringApplication:679] [logStartupProfileInfo] - The following profiles are active: dev
-2021-07-19 16:56:27 [restartedMain] [INFO] [org.springframework.boot.StartupInfoLogger:59] [logStarted] - Started GatewayApplication in 4.191 seconds (JVM running for 4.9)
-2021-07-19 16:57:37 [reactor-http-nio-3] [INFO] [com.deng.gateway.filter.IgnoreUrlsRemoveJwtFilter:38] [filter] - 进入IgnoreUrlsRemoveJwtFilter
-2021-07-19 16:57:37 [reactor-http-nio-3] [INFO] [com.deng.gateway.filter.IgnoreUrlsRemoveJwtFilter:38] [filter] - 进入IgnoreUrlsRemoveJwtFilter
-2021-07-19 16:57:37 [reactor-http-nio-3] [INFO] [com.deng.gateway.filter.AuthGlobalFilter:31] [filter] - 进入AuthGlobalFilter：将登录用户的JWT转化成用户信息的全局过滤器
-2021-07-19 16:58:13 [reactor-http-nio-3] [INFO] [com.deng.gateway.filter.IgnoreUrlsRemoveJwtFilter:38] [filter] - 进入IgnoreUrlsRemoveJwtFilter
-2021-07-19 16:58:13 [reactor-http-nio-3] [INFO] [com.deng.gateway.filter.IgnoreUrlsRemoveJwtFilter:38] [filter] - 进入IgnoreUrlsRemoveJwtFilter
-2021-07-19 16:58:13 [reactor-http-nio-3] [INFO] [com.deng.gateway.filter.AuthGlobalFilter:31] [filter] - 进入AuthGlobalFilter：将登录用户的JWT转化成用户信息的全局过滤器
