@@ -1,0 +1,5 @@
+2021-07-19 16:56:33 [restartedMain] [INFO] [org.springframework.boot.SpringApplication:679] [logStartupProfileInfo] - The following profiles are active: dev
+2021-07-19 16:56:39 [restartedMain] [INFO] [com.deng.auth.config.Oauth2ServerConfig:62] [configure] - 进入Oauth2ServerConfig.configure2
+2021-07-19 16:56:40 [restartedMain] [INFO] [com.deng.auth.config.Oauth2ServerConfig:43] [configure] - 进入Oauth2ServerConfig.configure1
+2021-07-19 16:56:41 [restartedMain] [INFO] [com.deng.commons.autoConfiguration.JedisConfiguration:64] [jedisPool] - JedisPool生成成功，Redis地址：121.4.237.128:9111
+2021-07-19 16:56:43 [restartedMain] [INFO] [org.springframework.boot.StartupInfoLogger:59] [logStarted] - Started AuthApplication in 10.866 seconds (JVM running for 11.793)

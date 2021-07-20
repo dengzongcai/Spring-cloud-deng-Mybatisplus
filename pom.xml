@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>deng</groupId>
+    <artifactId>spring-cloud-deng</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <description>总后台微服务</description>
+
+    <!-- 子模块 -->
+    <modules>
+        <module>spring-cloud-deng-eureka</module>
+        <module>spring-cloud-deng-commons</module>
+        <module>spring-cloud-deng-currency</module>
+        <module>spring-cloud-deng-gateway</module>
+        <module>spring-cloud-deng-auth</module>
+        <module>spring-cloud-deng-quartz</module>
+    </modules>
+
+    <profiles>
+        <profile>
+            <id>JDK-1.8</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+                <jdk>1.8</jdk>
+            </activation>
+            <properties>
+                <knife4j.version>2.0.4</knife4j.version>
+                <nimbus-jose-jwt.version>8.16</nimbus-jose-jwt.version>
+                <hutool.version>5.4.0</hutool.version>
+                <logstash-logback.version>5.3</logstash-logback.version>
+                <guava.version>26.0-jre</guava.version>
+                <slf4j.version>1.7.13</slf4j.version>
+                <logback.version>1.1.4</logback.version>
+                <mybatis-spring-boot.version>2.1.1</mybatis-spring-boot.version>
+                <mysql-connector.version>5.1.47</mysql-connector.version>
+                <druid.version>1.1.12</druid.version>
+                <!--        		<pagehelper.version>4.1.6</pagehelper.version>-->
+                <pagehelper.version>1.2.5</pagehelper.version>
+                <commons-collections.version>3.2.2</commons-collections.version>
+                <commons-codec.version>1.10</commons-codec.version>
+                <commons-beanutils.version>1.9.2</commons-beanutils.version>
+                <commons-lang3.version>3.5</commons-lang3.version>
+                <commons-io.version>2.5</commons-io.version>
+                <httpclinet.version>4.5.3</httpclinet.version>
+                <fastjson.version>1.2.24</fastjson.version>
+                <javax.servlet-api.version>3.1.0</javax.servlet-api.version>
+                <mybatisplus-spring-boot-starter.version>1.0.5</mybatisplus-spring-boot-starter.version>
+                <mybatisplus.version>2.1.4</mybatisplus.version>
+            </properties>
+        </profile>
+    </profiles>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.0.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Greenwich.SR4</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--集成logstash-->
+            <dependency>
+                <groupId>net.logstash.logback</groupId>
+                <artifactId>logstash-logback-encoder</artifactId>
+                <version>${logstash-logback.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+            <!--Knife4j API文档生产工具-->
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-micro-spring-boot-starter</artifactId>
+                <version>${knife4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-spring-boot-starter</artifactId>
+                <version>${knife4j.version}</version>
+            </dependency>
+            <!--JWT(Json Web Token)登录支持-->
+            <dependency>
+                <groupId>com.nimbusds</groupId>
+                <artifactId>nimbus-jose-jwt</artifactId>
+                <version>${nimbus-jose-jwt.version}</version>
+            </dependency>
+            <!--Hutool Java工具包-->
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+            <!--Spring Cloud Alibaba 相关依赖-->
+            <!-- <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency> -->
+
+            <!-- Log Begin -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j.version}</version><!--$NO-MVN-MAN-VER$ -->
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>jcl-over-slf4j</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>${logback.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-core</artifactId>
+                <version>${logback.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-access</artifactId>
+                <version>${logback.version}</version>
+            </dependency>
+            <!-- Log End -->
+            <!-- Data Begin -->
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis-spring-boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-connector.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+
+            <!--			<dependency>-->
+            <!--				<groupId>com.github.pagehelper</groupId>-->
+            <!--				<artifactId>pagehelper</artifactId>-->
+            <!--				<version>${pagehelper.version}</version>-->
+            <!--			</dependency>-->
+            <!-- 兼容spring boot 2.1.* 版本换成下面的 -->
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>${pagehelper.version}</version>
+            </dependency>
+            <!-- Data End -->
+
+
+            <!-- Common Begin -->
+            <dependency>
+                <groupId>commons-collections</groupId>
+                <artifactId>commons-collections</artifactId>
+                <version>${commons-collections.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-codec</groupId>
+                <artifactId>commons-codec</artifactId>
+                <version>${commons-codec.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-beanutils</groupId>
+                <artifactId>commons-beanutils</artifactId>
+                <version>${commons-beanutils.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons-io.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>${httpclinet.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpmime</artifactId>
+                <version>${httpclinet.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+            <!-- Common End -->
+
+            <!-- Web Begin -->
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>${javax.servlet-api.version}</version>
+                <scope>provided</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <!--参考文章：https://blog.csdn.net/liupeifeng3514/article/details/80236077-->
+            <plugin>
+                <!-- 指定maven编译的jdk版本,如果不指定,maven3默认用jdk 1.5 maven2默认用jdk1.3 -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <!-- 源代码使用的JDK版本 -->
+                    <source>1.8</source>
+                    <!-- 需要生成的目标class文件的编译版本 -->
+                    <target>1.8</target>
+                    <!-- 字符集编码 -->
+                    <encoding>UTF-8</encoding>
+                    <!-- 跳过测试 -->
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
